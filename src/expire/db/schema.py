@@ -72,7 +72,14 @@ def is_initialized() -> bool:
     db_path = ExpireDatabase.get_db_path()
     if not db_path.exists():
         return False
-
-    with ExpireDatabase.get_cursor() as cur:
+    
+    try:
+        import sqlite3
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
         cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='expires'")
-        return cur.fetchone() is not None
+        result = cur.fetchone() is not None
+        conn.close()
+        return result
+    except Exception:
+        return False

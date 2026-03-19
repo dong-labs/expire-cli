@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dong-expire"
-version = "0.1.0"
+version = "0.1.1"
 description = "到期咚 - 服务到期日管理 CLI"
 readme = "README.md"
 requires-python = ">=3.11"
