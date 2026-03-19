@@ -1,0 +1,59 @@
+# 到期咚 (dong-expire)
+
+服务到期日管理 CLI - 帮你管理各种服务的到期时间
+
+## 安装
+
+```bash
+pipx install dong-expire
+```
+
+## 快速开始
+
+```bash
+# 初始化
+dong-expire init
+
+# 添加到期项
+dong-expire add "阿里云ECS" --expire 2027-04-15 --cost 1200 --category "云服务" --repeat yearly
+
+# 查看所有
+dong-expire list
+
+# 查看即将到期（30天内）
+dong-expire remind --days 30
+
+# 续费
+dong-expire renew 1 --auto  # 自动延长一个周期
+dong-expire renew 1 --to 2028-04-15  # 指定新日期
+
+# 查看续费历史
+dong-expire history 1
+
+# 统计费用
+dong-expire stats
+```
+
+## 命令
+
+| 命令 | 说明 |
+|------|------|
+| `init` | 初始化数据库 |
+| `add` | 添加到期项 |
+| `list` | 列出所有到期项 |
+| `remind` | 查看即将到期 |
+| `renew` | 续费 |
+| `history` | 查看续费历史 |
+| `stats` | 统计费用 |
+| `search` | 搜索 |
+| `update` | 更新 |
+| `delete` | 删除 |
+| `get` | 获取详情 |
+
+## 数据库
+
+数据存储在 `~/.dong/expire.db`
+
+## License
+
+MIT

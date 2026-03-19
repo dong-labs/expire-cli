@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dong-expire"
+version = "0.1.0"
+description = "到期咚 - 服务到期日管理 CLI"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "gudong"}]
+keywords = ["cli", "expiration", "reminder", "subscription"]
+dependencies = [
+    "typer>=0.12.0",
+    "rich>=13.0.0",
+    "dong-core>=0.3.0",
+    "python-dateutil>=2.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+dong-expire = "expire.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expire"]
