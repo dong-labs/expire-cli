@@ -1,9 +1,9 @@
 [build-system]
 requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_base"
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "expire-cli"
+name = "dong-expire"
 version = "0.2.2"
 description = "到期咚 - 服务到期日管理 CLI"
 readme = "README.md"
