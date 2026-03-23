@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dong-expire"
-version = "0.2.2"
+version = "0.7.3"
 description = "到期咚 - 服务到期日管理 CLI"
 readme = "README.md"
 requires-python = ">=3.11"

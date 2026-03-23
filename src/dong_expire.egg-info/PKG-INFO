@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: dong-expire
-Version: 0.2.2
+Version: 0.7.3
 Summary: 到期咚 - 服务到期日管理 CLI
 Author: gudong
 Keywords: cli,expiration,reminder,subscription
@@ -19,6 +19,8 @@ Dynamic: license-file
 # 到期咚 (dong-expire)
 
 服务到期日管理 CLI - 帮你管理各种服务的到期时间
+
+[![Version](https://img.shields.io/badge/Version-0.2.2-blue.svg)](https://pypi.org/project/dong-expire/)
 
 ## 安装
 

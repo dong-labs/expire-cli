@@ -43,13 +43,25 @@ app.command()(delete.delete)
 app.command()(get.get)
 
 
-@app.callback()
-def main(
-    version: bool = typer.Option(False, "--version", "-v", help="显示版本"),
-):
-    """到期咚 - 服务到期日管理 CLI"""
-    if version:
+def version_callback(value: bool) -> None:
+    """版本号回调函数"""
+    if value:
         console.print(f"dong-expire {__version__}")
         raise typer.Exit()
+
+
+@app.callback()
+def main(
+    version: bool = typer.Option(
+        False,
+        "--version",
+        "-v",
+        help="显示版本",
+        callback=version_callback,
+        is_eager=True,
+    ),
+):
+    """到期咚 - 服务到期日管理 CLI"""
+    pass
 
 
